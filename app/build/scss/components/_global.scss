@@ -1,0 +1,44 @@
+@use 'sass:map';
+@use './resets';
+@use './variables' as *;
+
+//typography
+h1 {
+  font-size: map-get($font-size, xxl);
+  font-family: map-get($font-family, primary);
+}
+h2 {
+  font-size: map-get($font-size, xl);
+  font-family: map-get($font-family, primary);
+}
+h3 {
+  font-size: map-get($font-size, l);
+  font-family: map-get($font-family, primary);
+}
+h4 {
+  font-size: map-get($font-size, m);
+  font-family: map-get($font-family, primary);
+}
+h5 {
+  font-size: map-get($font-size, s);
+  font-family: map-get($font-family, secondary);
+  letter-spacing: 4.75;
+}
+.subheading1 {
+  font-family: map-get($font-family, primary);
+  font-size: map-get($font-size, s);
+}
+.subheading2 {
+  font-family: map-get($font-family, secondary);
+  font-size: map-get($font-size, xxs);
+  letter-spacing: 2.35;
+}
+.subheading3 {
+  font-family: map-get($font-family, secondary);
+  font-size: map-get($font-size, xs);
+  letter-spacing: 2.7;
+}
+p {
+  font-size: rem(18px);
+  font-family: map-get($font-family, secondary);
+}

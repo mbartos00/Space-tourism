@@ -1,0 +1,27 @@
+@use 'sass:math';
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap');
+
+@function rem($size) {
+  @return math.div($size, 16px) * 1rem;
+}
+
+$font-size: (
+  xxl: rem(150px),
+  xl: rem(100px),
+  l: rem(56px),
+  m: rem(32px),
+  s: rem(28px),
+  xs: rem(16px),
+  xxs: rem(14px),
+);
+
+$font-family: (
+  primary: 'Bellefair, serif',
+  secondary: 'Barlow Condensed, sans-serif',
+);
+
+$colors: (
+  primary: '#0b0d17',
+  accent: '#d0d6f9',
+  neutral: '#fff ',
+);
