@@ -1,6 +1,5 @@
 @use 'sass:math';
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap');
 @function rem($size) {
   @return math.div($size, 16px) * 1rem;
 }
@@ -16,12 +15,18 @@ $font-size: (
 );
 
 $font-family: (
-  primary: 'Bellefair, serif',
-  secondary: 'Barlow Condensed, sans-serif',
+  primary: (
+    'Bellefair',
+    serif,
+  ),
+  secondary: (
+    'Barlow Condensed',
+    sans-serif,
+  ),
 );
 
 $colors: (
-  primary: '#0b0d17',
-  accent: '#d0d6f9',
-  neutral: '#fff ',
+  primary: #0b0d17,
+  accent: #d0d6f9,
+  neutral: #ffffff,
 );

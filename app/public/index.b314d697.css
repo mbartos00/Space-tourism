@@ -1,0 +1,305 @@
+@import "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap";
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  color: #ffffff;
+}
+h1 {
+  font-size: 9.375rem;
+  font-family: "Bellefair", serif;
+}
+h2 {
+  font-size: 6.25rem;
+  font-family: "Bellefair", serif;
+}
+h3 {
+  font-size: 3.5rem;
+  font-family: "Bellefair", serif;
+}
+h4 {
+  font-size: 2rem;
+  font-family: "Bellefair", serif;
+}
+h5 {
+  font-size: 1.75rem;
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 4.75px;
+}
+.subheading1 {
+  font-family: "Bellefair", serif;
+  font-size: 1.75rem;
+}
+.subheading2 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 2.35px;
+}
+.subheading3 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 2.7px;
+}
+p {
+  font-size: 1.125rem;
+  font-family: "Barlow Condensed", sans-serif;
+}
+.main-header-nav--menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.main-header-nav--menu-link {
+  list-style: none;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+.main-header-nav--menu-link span {
+  margin-right: 10px;
+  font-weight: bold;
+  pointer-events: none;
+}
+.main-header-nav--menu-link.active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 4px;
+  transform: translateY(-50%);
+  justify-content: flex-end;
+  height: 2rem;
+  background: #ffffff;
+}
+.main-header-nav--menu-link a {
+  text-decoration: none;
+  color: inherit;
+}
+@media screen and (min-width: 768px) {
+  .main-header-nav--menu {
+    flex-direction: row;
+    gap: 2.3rem;
+  }
+  .main-header-nav--menu-link span {
+    display: none;
+  }
+  .main-header-nav--menu-link.active::after {
+    top: 135%;
+    right: 50%;
+    height: 2.5rem;
+    transform: unset;
+    transform: rotate(90deg);
+  }
+}
+@media screen and (min-width: 1440px) {
+  .main-header-nav--menu {
+    gap: 3rem;
+  }
+  .main-header-nav--menu-link span {
+    display: inline;
+  }
+  .main-header-nav--menu-link::before {
+    content: "";
+    position: absolute;
+    top: 135%;
+    right: 50%;
+    width: 3px;
+    height: 2.5rem;
+    transform: rotate(90deg);
+    background-color: white;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+  }
+  .main-header-nav--menu-link:hover::before {
+    opacity: 0.6;
+  }
+}
+.main-header--nav {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 70%;
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(1rem);
+  padding: 7.37rem 0 7.37rem 2rem;
+  transition: all ease-in-out 0.5s;
+  transform: translateX(200%);
+}
+@media screen and (min-width: 768px) {
+  .main-header--nav {
+    justify-content: center;
+    transform: translateX(0);
+    height: fit-content;
+    padding: 2rem 3rem;
+    flex-direction: row;
+    width: unset;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .main-header--nav {
+    padding: 2.2rem 7.68rem;
+    position: relative;
+  }
+}
+.main-header {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+.main-header--logo {
+  width: 2.5rem;
+  aspect-ratio: 1;
+}
+.main-header--line {
+  display: none;
+}
+.main-header--burger {
+  width: 1.5rem;
+  aspect-ratio: 1;
+  background-color: transparent;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
+.main-header--burger-btn {
+  width: 100%;
+  height: 3px;
+  background-color: #d0d6f9;
+}
+.main-header--burger-btn::before {
+  position: absolute;
+  transform: translateY(-9px);
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #d0d6f9;
+}
+.main-header--burger-btn::after {
+  position: absolute;
+  transform: translateY(9px);
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #d0d6f9;
+}
+.main-header--burger-btn.active {
+  background: transparent;
+  transform: translateX(-35%);
+}
+.main-header--burger-btn.active::before {
+  transform: rotate(45deg) translate(5px, -5px);
+}
+.main-header--burger-btn.active::after {
+  transform: rotate(-45deg) translate(5px, 5px);
+}
+@media screen and (min-width: 768px) {
+  .main-header {
+    padding: 2.5rem 0 0 3.43rem;
+  }
+  .main-header--burger {
+    display: none;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .main-header--line {
+    display: block;
+    margin-right: -2rem;
+    width: 40vw;
+    z-index: 3;
+    opacity: 0.2;
+  }
+}
+.main-content {
+  max-width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.main-content.home {
+  background-image: url("background-home-mobile.132aa33b.jpg");
+}
+@media screen and (min-width: 768px) {
+  .main-content.home {
+    background-image: url("background-home-tablet.2f03eb9d.jpg");
+  }
+}
+@media screen and (min-width: 1440px) {
+  .main-content.home {
+    background-image: url("background-home-desktop.cfcb9f1a.jpg");
+  }
+}

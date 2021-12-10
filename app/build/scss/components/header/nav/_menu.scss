@@ -1,0 +1,80 @@
+@use '../../variables' as *;
+@use 'sass:map';
+.main-header-nav--menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  &-link {
+    list-style: none;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    span {
+      margin-right: 10px;
+      font-weight: bold;
+      pointer-events: none;
+    }
+    &.active::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 4px;
+      transform: translateY(-50%);
+      justify-content: flex-end;
+      height: 2rem;
+      background: map-get($colors, neutral);
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main-header-nav--menu {
+    flex-direction: row;
+    gap: 2.3rem;
+    &-link {
+      span {
+        display: none;
+      }
+      &.active::after {
+        top: 135%;
+        right: 50%;
+        height: 2.5rem;
+        transform: unset;
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+@media screen and (min-width: 1440px) {
+  .main-header-nav--menu {
+    gap: 3rem;
+    &-link {
+      span {
+        display: inline;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 135%;
+        right: 50%;
+        width: 3px;
+        height: 2.5rem;
+        transform: rotate(90deg);
+        background-color: rgb(255, 255, 255);
+        opacity: 0;
+        transition: all ease-in-out 0.5s;
+      }
+      &:hover::before {
+        opacity: 0.6;
+      }
+    }
+  }
+}

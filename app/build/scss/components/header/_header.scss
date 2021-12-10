@@ -1,0 +1,82 @@
+@use 'sass:map';
+@use '../variables' as *;
+@forward './nav/nav';
+
+.main-header {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+
+  &--logo {
+    width: 2.5rem;
+    aspect-ratio: 1;
+  }
+  &--line {
+    display: none;
+  }
+  &--burger {
+    width: 1.5rem;
+    aspect-ratio: 1;
+    background-color: transparent;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    &-btn {
+      width: 100%;
+      height: 3px;
+      background-color: map-get($colors, accent);
+
+      &::before {
+        position: absolute;
+        transform: translateY(-9px);
+        content: '';
+        width: 100%;
+        height: 3px;
+        background-color: map-get($colors, accent);
+      }
+      &::after {
+        position: absolute;
+        transform: translateY(9px);
+        content: '';
+        width: 100%;
+        height: 3px;
+        background-color: map-get($colors, accent);
+      }
+      &.active {
+        background: transparent;
+        transform: translateX(-35%);
+      }
+      &.active::before {
+        transform: rotate(45deg) translate(5px, -5px);
+      }
+      &.active::after {
+        transform: rotate(-45deg) translate(5px, 5px);
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .main-header {
+    padding: 2.5rem 0 0 3.43rem;
+    &--burger {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .main-header {
+    &--line {
+      display: block;
+      margin-right: -2rem;
+      width: 40vw;
+      z-index: 3;
+      opacity: 0.2;
+    }
+  }
+}

@@ -1,1 +1,25 @@
 @use './components/global';
+@use './components/header/header';
+
+.main-content {
+  max-width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.main-content.home {
+  background-image: url('/app/build/images/home/background-home-mobile.jpg');
+}
+
+@media screen and (min-width: 768px) {
+  .main-content.home {
+    background-image: url('/app/build/images/home/background-home-tablet.jpg');
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .main-content.home {
+    background-image: url('/app/build/images/home/background-home-desktop.jpg');
+  }
+}
