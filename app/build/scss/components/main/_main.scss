@@ -1,0 +1,23 @@
+@forward './main-button';
+@forward './main-text';
+
+.main-content--main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .main-content--main {
+    padding: 10rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .main-content--main {
+    flex-direction: row;
+    padding: 0;
+    padding-left: 10rem;
+    height: 100vh;
+  }
+}

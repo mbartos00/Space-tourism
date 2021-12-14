@@ -25,7 +25,7 @@ h4 {
 h5 {
   font-size: map-get($font-size, s);
   font-family: map-get($font-family, secondary);
-  letter-spacing: 4.75px;
+  letter-spacing: 4.72px;
 }
 .subheading1 {
   font-family: map-get($font-family, primary);
@@ -43,5 +43,5 @@ h5 {
 }
 p {
   font-size: rem(18px);
-  font-family: map-get($font-family, secondary);
+  font-family: map-get($font-family, third);
 }

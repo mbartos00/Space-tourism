@@ -1,0 +1,55 @@
+@use '../variables' as *;
+
+.main-text--container {
+  display: inherit;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  &-intro {
+    font-weight: 400;
+    color: map-get($colors, accent);
+    font-size: 1rem;
+  }
+  &-title {
+    font-size: 5rem;
+    font-weight: 400;
+  }
+  &-description {
+    line-height: 1.7;
+    font-size: 0.93rem;
+    color: map-get($colors, accent);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main-text--container {
+    &-intro {
+      font-size: 1.25rem;
+    }
+    &-title {
+      font-size: 9.37rem;
+    }
+    &-description {
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+  }
+}
+@media screen and (min-width: 1440px) {
+  .main-text--container {
+    text-align: left;
+    align-items: flex-start;
+    width: 100%;
+    &-intro {
+      font-size: map-get($font-size, s);
+    }
+    &-title {
+      font-size: 9.37rem;
+    }
+    &-description {
+      width: 45ch;
+      line-height: 1.85;
+      font-size: 1.125rem;
+    }
+  }
+}

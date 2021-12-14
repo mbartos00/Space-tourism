@@ -1,0 +1,48 @@
+@use '../variables' as *;
+
+.main-button--container {
+  position: absolute;
+  bottom: 3rem;
+  &-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #0b0d17;
+    width: 9.37rem;
+    aspect-ratio: 1;
+    background-color: map-get($colors, neutral);
+    font-family: map-get($font-family, primary);
+    font-size: 1.25rem;
+    letter-spacing: 1.25px;
+    font-weight: 400;
+    border-radius: 100vh;
+  }
+}
+@media screen and (min-width: 768px) {
+  .main-button--container {
+    position: initial;
+    transform: translateY(6rem);
+    &-btn {
+      font-size: 2rem;
+      width: 15rem;
+    }
+  }
+}
+@media screen and (min-width: 1440px) {
+  .main-button--container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transform: none;
+    &-btn {
+      font-size: 2rem;
+      width: 15rem;
+      transition: all ease-in-out 0.2s;
+      &:hover {
+        box-shadow: 0px 0px 2px 50px rgba(255, 255, 255, 0.15);
+        transition: box-shadow ease-in-out 0.5s;
+      }
+    }
+  }
+}

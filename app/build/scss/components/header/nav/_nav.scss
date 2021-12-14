@@ -8,15 +8,17 @@
   top: 0;
   height: 100vh;
   width: 70%;
-  background-color: rgba(255, 255, 255, 4%);
-  backdrop-filter: blur(1rem);
+  background-color: rgba(255, 255, 255, 3%);
+  backdrop-filter: blur(2rem);
   padding: min(7.37rem) 0 min(7.37rem) 2rem;
   transition: all ease-in-out 0.5s;
-  transform: translateX(200%);
+  transform: translateX(-200%);
+  z-index: 1;
 }
 
 @media screen and (min-width: 768px) {
   .main-header--nav {
+    position: absolute;
     justify-content: center;
     transform: translateX(0);
     height: fit-content;
