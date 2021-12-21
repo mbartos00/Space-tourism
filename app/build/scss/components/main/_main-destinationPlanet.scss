@@ -1,0 +1,57 @@
+@use '../variables' as *;
+
+.main-container--planet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h5 {
+    font-weight: 400;
+    margin-bottom: 2rem;
+
+    span {
+      color: rgba(255, 255, 255, 0.3);
+      font-weight: bold;
+      margin-right: 1.125rem;
+      font-size: inherit;
+    }
+  }
+  &-model {
+    width: 10rem;
+    aspect-ratio: 1;
+    margin-bottom: 1.7rem;
+    // canvas {
+    //   width: 100%;
+    //   aspect-ratio: 1;
+    // }
+  }
+}
+@media screen and(min-width:768px) {
+  .main-container--planet {
+    h5 {
+      position: absolute;
+      top: 4rem;
+      left: 5%;
+      font-size: 1.25rem;
+    }
+    &-model {
+      width: 18.75rem;
+      margin-bottom: 3rem;
+    }
+  }
+}
+@media screen and(min-width:1440px) {
+  .main-container--planet {
+    h5 {
+      position: absolute;
+      left: 20%;
+      top: 5rem;
+      font-size: map-get($font-size, s);
+      letter-spacing: 4.72px;
+    }
+    &-model {
+      margin-top: 1rem;
+      width: 27.8rem;
+      margin-bottom: 3rem;
+    }
+  }
+}

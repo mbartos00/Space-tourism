@@ -11,9 +11,8 @@
   background-color: rgba(255, 255, 255, 3%);
   backdrop-filter: blur(2rem);
   padding: min(7.37rem) 0 min(7.37rem) 2rem;
-  transition: all ease-in-out 0.5s;
-  transform: translateX(-200%);
   z-index: 1;
+  transform: translateX(150%);
 }
 
 @media screen and (min-width: 768px) {

@@ -1,0 +1,68 @@
+@use '../variables' as *;
+
+.main-container--crew {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  h5 {
+    font-weight: 400;
+    margin-bottom: 2rem;
+
+    span {
+      color: rgba(255, 255, 255, 0.3);
+      font-weight: bold;
+      margin-right: 1rem;
+      font-size: inherit;
+    }
+  }
+  &-image {
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+
+    &.image {
+      width: 11rem;
+
+      border: none;
+    }
+  }
+}
+@media screen and(min-width:768px) {
+  .main-container--crew {
+    h5 {
+      position: absolute;
+      top: 4rem;
+      left: 5%;
+      font-size: 1.25rem;
+      letter-spacing: 3.38px;
+    }
+    &-image {
+      border-bottom: 0;
+      &.image {
+        width: 20.5rem;
+      }
+    }
+  }
+}
+@media screen and(min-width:1440px) {
+  .main-container--crew {
+    h5 {
+      position: absolute;
+      top: 4rem;
+      left: 5%;
+      font-size: map-get($font-size, s);
+      letter-spacing: 4.72px;
+    }
+    &-image {
+      border-bottom: 0;
+
+      &.image {
+        position: fixed;
+        bottom: 0;
+        height: 44.5rem;
+        width: 35rem;
+      }
+    }
+  }
+}

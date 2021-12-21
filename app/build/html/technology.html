@@ -5,16 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../scss/style.scss" />
-
     <link
       rel="shortcut icon"
       href="/app/build/images/favicon-32x32.png"
       type="image/x-icon"
     />
-    <title>Technology</title>
+    <title>Home</title>
   </head>
   <body>
-    <div class="main-content">
+    <div class="main-content home">
       <header class="main-header">
         <div class="main-header--logo">
           <img
@@ -26,9 +25,10 @@
         <div class="main-header--burger">
           <div class="main-header--burger-btn"></div>
         </div>
+        <hr class="main-header--line" />
         <nav class="main-header--nav">
           <ul class="main-header-nav--menu">
-            <li class="main-header-nav--menu-link">
+            <li class="main-header-nav--menu-link active">
               <span class="subheading3">00</span
               ><a class="subheading3" href="./index.html">HOME</a>
             </li>
@@ -47,7 +47,25 @@
           </ul>
         </nav>
       </header>
-      <main class="main-content--main"></main>
+      <main class="main-content--main home">
+        <div class="main-text--container">
+          <h5 class="main-text--container-intro">SO, YOU WANT TO TRAVEL TO</h5>
+          <h1 class="main-text--container-title">SPACE</h1>
+          <p class="main-text--container-description">
+            Let’s face it; if you want to go to space, you might as well
+            genuinely go to outer space and not hover kind of on the edge of it.
+            Well sit back, and relax because we’ll give you a truly out of this
+            world experience!
+          </p>
+        </div>
+        <div class="main-button--container">
+          <a href="./destination.html" class="main-button--container-btn"
+            >EXPLORE</a
+          >
+        </div>
+      </main>
     </div>
+
+    <script type="module" src="../js/index.js"></script>
   </body>
 </html>

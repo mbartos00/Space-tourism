@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../scss/style.scss" />
-
     <link
       rel="shortcut icon"
       href="/app/build/images/favicon-32x32.png"
@@ -14,7 +13,7 @@
     <title>Destination</title>
   </head>
   <body>
-    <div class="main-content">
+    <div class="main-content destination">
       <header class="main-header">
         <div class="main-header--logo">
           <img
@@ -26,13 +25,14 @@
         <div class="main-header--burger">
           <div class="main-header--burger-btn"></div>
         </div>
+        <hr class="main-header--line" />
         <nav class="main-header--nav">
           <ul class="main-header-nav--menu">
             <li class="main-header-nav--menu-link">
               <span class="subheading3">00</span
               ><a class="subheading3" href="./index.html">HOME</a>
             </li>
-            <li class="main-header-nav--menu-link">
+            <li class="main-header-nav--menu-link active">
               <span class="subheading3">01</span
               ><a class="subheading3" href="./destination.html">DESTINATION</a>
             </li>
@@ -47,7 +47,68 @@
           </ul>
         </nav>
       </header>
-      <main class="main-content--main"></main>
+      <main class="main-content--main destination">
+        <div class="main-container">
+          <section class="main-container--planet">
+            <h5 class="subheading3">
+              <span class="subheading3">01</span>
+              PICK YOUR DESTINATION
+            </h5>
+            <div class="main-container--planet-model">
+              <!-- <img src="../images/destination/image-moon.png" alt="" /> -->
+              <canvas></canvas>
+            </div>
+          </section>
+          <section class="main-container--description">
+            <section class="main-container--description-btns">
+              <button class="main-container--description-btns--btn active">
+                Moon</button
+              ><button class="main-container--description-btns--btn">
+                Mars</button
+              ><button class="main-container--description-btns--btn">
+                Europa</button
+              ><button class="main-container--description-btns--btn">
+                Titan
+              </button>
+            </section>
+            <article class="main-container--description-text">
+              <h3 class="main-container--description-text--title">MOON</h3>
+              <p class="main-container--description-text--paragraph">
+                See our planet as you’ve never seen it before. A perfect
+                relaxing trip away to help regain perspective and come back
+                refreshed. While you’re there, take in some history by visiting
+                the Luna 2 and Apollo 11 landing sites.
+              </p>
+              <hr />
+              <div class="main-container--description-info">
+                <section>
+                  <h4 class="main-container--description-info--title">
+                    AVG.DISTANCE
+                  </h4>
+                  <p
+                    class="
+                      main-container--description-info--distance
+                      subheading1
+                    "
+                  >
+                    384,400 KM
+                  </p>
+                </section>
+                <section>
+                  <h4 class="main-container--description-info--title">
+                    EST. TRAVEL TIME
+                  </h4>
+                  <p class="main-container--description-info--time subheading1">
+                    3 DAYS
+                  </p>
+                </section>
+              </div>
+            </article>
+          </section>
+        </div>
+      </main>
     </div>
+
+    <script type="module" src="../js/index.js"></script>
   </body>
 </html>

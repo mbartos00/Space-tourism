@@ -1,0 +1,119 @@
+@use '../variables' as *;
+
+.main-container--description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-btns {
+    display: flex;
+    gap: 1rem;
+    &--btn {
+      padding: 0;
+      background: transparent;
+      color: map-get($colors, accent);
+      font-family: map-get($font-family, third);
+      font-size: 0.875rem;
+      letter-spacing: 2.35px;
+      padding-bottom: 8px;
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: all ease-in-out 0.5s;
+      &.active,
+      &:hover {
+        color: map-get($colors, neutral);
+        border-bottom: 3px solid #fff;
+      }
+      &:hover {
+        border-bottom-color: rgba(255, 255, 255, 0.4);
+      }
+    }
+  }
+  &-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &--title {
+      font-weight: 400;
+      margin-top: 1rem;
+    }
+    &--paragraph {
+      font-size: 0.937rem;
+      color: map-get($colors, accent);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    hr {
+      width: 100%;
+      opacity: 0.15;
+    }
+  }
+  &-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    &--title {
+      font-family: map-get($font-family, secondary);
+      font-size: map-get($font-size, xxs);
+      letter-spacing: 2.36px;
+      color: map-get($colors, accent);
+      font-weight: 400;
+      margin-top: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    &--time {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main-container--description {
+    &-btns {
+      gap: 1.9rem;
+      &--btn {
+        font-size: 1rem;
+        letter-spacing: 2.7px;
+        font-family: map-get($font-family, second);
+      }
+    }
+    &-text {
+      &--title {
+        font-size: 5rem;
+        margin-top: 2rem;
+      }
+      &--paragraph {
+        font-size: map-get($font-size, xs);
+        width: 64ch;
+      }
+    }
+    &-info {
+      flex-direction: row;
+      gap: 8rem;
+    }
+  }
+}
+@media screen and (min-width: 1440px) {
+  .main-container--description {
+    align-items: flex-start;
+    & > * {
+      align-items: flex-start;
+    }
+    &-btns {
+      &--btn {
+        font-family: map-get($font-family, third);
+      }
+    }
+    &-text {
+      &--title {
+        font-size: map-get($font-size, xl);
+      }
+      &--paragraph {
+        text-align: left;
+        width: 44ch;
+        font-size: 1.125rem;
+      }
+    }
+  }
+}
