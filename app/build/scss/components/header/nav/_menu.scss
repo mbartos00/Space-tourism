@@ -16,17 +16,10 @@
       font-weight: bold;
       pointer-events: none;
     }
-    &.active::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 50%;
-      width: 4px;
-      transform: translateY(-50%);
-      justify-content: flex-end;
-      height: 2rem;
-      background: map-get($colors, neutral);
+    &.active {
+      border-right: 4px solid #fff;
     }
+
     a {
       text-decoration: none;
       color: inherit;
@@ -39,15 +32,13 @@
     flex-direction: row;
     gap: 2.3rem;
     &-link {
+      padding-bottom: 1.25rem;
       span {
         display: none;
       }
-      &.active::after {
-        top: 135%;
-        right: 50%;
-        height: 2.5rem;
-        transform: unset;
-        transform: rotate(90deg);
+      &.active {
+        border-right: none;
+        border-bottom: 3 px solid #fff;
       }
     }
   }
@@ -55,24 +46,21 @@
 @media screen and (min-width: 1440px) {
   .main-header-nav--menu {
     gap: 3rem;
+
     &-link {
+      padding-bottom: 1.9rem;
+      transition: all ease-in-out 0.2s;
       span {
         display: inline;
       }
-      &::before {
-        content: '';
-        position: absolute;
-        top: 135%;
-        right: 50%;
-        width: 3px;
-        height: 2.5rem;
-        transform: rotate(90deg);
-        background-color: rgb(255, 255, 255);
-        opacity: 0;
-        transition: all ease-in-out 0.5s;
+      &.active {
+        border-bottom: 4px solid #fff;
       }
-      &:hover::before {
-        opacity: 0.6;
+      &:hover {
+        border-bottom: 4px solid #ffffff46;
+      }
+      &:hover.active {
+        border-bottom: 4px solid #ffffff;
       }
     }
   }

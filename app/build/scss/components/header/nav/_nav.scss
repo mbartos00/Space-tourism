@@ -10,6 +10,10 @@
   width: 70%;
   background-color: rgba(255, 255, 255, 3%);
   backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(2rem);
+  @supports not (backdrop-filter: blur(2rem)) {
+    background-color: rgba(11, 13, 23, 90%);
+  }
   padding: min(7.37rem) 0 min(7.37rem) 2rem;
   z-index: 1;
   transform: translateX(150%);
@@ -21,14 +25,18 @@
     justify-content: center;
     transform: translateX(0);
     height: fit-content;
-    padding: 2rem 3rem;
+    padding: 2rem 3rem 0 3rem;
+
     flex-direction: row;
     width: unset;
+    @supports not (backdrop-filter: blur(2rem)) {
+      box-shadow: -10px 5px 5px -5px lighten(rgba(11, 13, 23, 0.2), 50%);
+    }
   }
 }
 @media screen and (min-width: 1440px) {
   .main-header--nav {
-    padding: 2.2rem 7.68rem;
+    padding: 2.2rem 7.68rem 0.1rem 7.68rem;
     position: relative;
   }
 }

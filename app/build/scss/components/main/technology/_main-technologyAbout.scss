@@ -1,0 +1,116 @@
+@use '../../variables' as *;
+
+.main-container--about {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &.technology {
+    padding-inline: 1.5rem;
+  }
+  &-technologyBtns {
+    display: flex;
+    margin-block: 2rem;
+    gap: 1rem;
+    &--btn {
+      width: 2.5rem;
+      aspect-ratio: 1;
+      border: none;
+      border-radius: 100vh;
+      background: transparent;
+      font-family: map-get($font-family, primary);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: map-get($colors, neutral);
+      transition: all ease-in-out 0.2s;
+      cursor: pointer;
+      &.active {
+        background-color: rgba(255, 255, 255, 1);
+        color: #000;
+      }
+
+      &:hover {
+        border: 1px solid rgba(255, 255, 255, 1);
+        transition: all ease-in-out 0.2s;
+      }
+      &:hover.active {
+        cursor: initial;
+      }
+    }
+  }
+  &-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    .subheading3 {
+      font-size: 0.875rem;
+      font-weight: 400;
+      letter-spacing: 2.36px;
+      color: map-get($colors, accent);
+      margin-bottom: 8px;
+    }
+    &--title {
+      font-family: map-get($font-family, primary);
+      letter-spacing: 0;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+    &--paragraph {
+      color: map-get($colors, accent);
+      font-size: 1rem;
+    }
+  }
+}
+@media screen and(min-width:768px) {
+  .main-container--about {
+    &-technologyBtns {
+      &--btn {
+        width: 3.75rem;
+        font-size: 1.5rem;
+      }
+    }
+    &-content {
+      .subheading3 {
+        font-size: 1rem;
+      }
+      &--title {
+        font-size: 2.5rem;
+      }
+      &--paragraph {
+        max-width: 51ch;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+@media screen and(min-width:1440px) {
+  .main-container--about {
+    gap: 5rem;
+    &.technology {
+      margin-top: 2rem;
+      flex-direction: row;
+    }
+    &-technologyBtns {
+      flex-direction: column;
+      &--btn {
+        width: 5rem;
+      }
+    }
+    &-content {
+      align-items: flex-start;
+
+      text-align: left;
+      .subheading1 {
+        font-size: 2rem;
+      }
+      &--title {
+        font-size: map-get($font-size, l);
+      }
+      &--paragraph {
+        font-size: 1.125rem;
+        max-width: unset;
+      }
+    }
+  }
+}

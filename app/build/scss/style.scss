@@ -18,6 +18,9 @@
 .main-content.crew {
   background-image: url('/app/build/images/crew/Mobile\ -\ Crew.jpg');
 }
+.main-content.technology {
+  background-image: url('/app/build/images/technology/Mobile\ -\ Technology.jpg');
+}
 
 @media screen and (min-width: 768px) {
   .main-content.home {
@@ -30,6 +33,10 @@
   .main-content.crew {
     height: unset;
     background-image: url('/app/build/images/crew/Tablet\ -\ Crew.jpg');
+  }
+  .main-content.technology {
+    height: unset;
+    background-image: url('/app/build/images/technology/Tablet\ -\ Technology.jpg');
   }
 }
 
@@ -48,5 +55,10 @@
     height: 100vh;
     overflow: hidden;
     background-image: url('/app/build/images/crew/Desktop\ -\ Crew.jpg');
+  }
+  .main-content.technology {
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('/app/build/images/technology/Desktop\ -\ Technology.jpg');
   }
 }

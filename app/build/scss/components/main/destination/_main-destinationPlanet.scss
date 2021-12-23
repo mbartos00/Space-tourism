@@ -1,4 +1,4 @@
-@use '../variables' as *;
+@use '../../variables' as *;
 
 .main-container--planet {
   display: flex;
@@ -16,13 +16,15 @@
     }
   }
   &-model {
-    width: 10rem;
-    aspect-ratio: 1;
+    width: 100%;
     margin-bottom: 1.7rem;
-    // canvas {
-    //   width: 100%;
-    //   aspect-ratio: 1;
-    // }
+    display: flex;
+    justify-content: center;
+    canvas {
+      background: white;
+      aspect-ratio: 1;
+      width: 13rem;
+    }
   }
 }
 @media screen and(min-width:768px) {
@@ -34,8 +36,10 @@
       font-size: 1.25rem;
     }
     &-model {
-      width: 18.75rem;
       margin-bottom: 3rem;
+      canvas {
+        width: 25rem;
+      }
     }
   }
 }
@@ -43,15 +47,17 @@
   .main-container--planet {
     h5 {
       position: absolute;
-      left: 20%;
-      top: 5rem;
+      top: 4rem;
+      left: 5%;
       font-size: map-get($font-size, s);
       letter-spacing: 4.72px;
     }
     &-model {
       margin-top: 1rem;
-      width: 27.8rem;
       margin-bottom: 3rem;
+      canvas {
+        width: 30rem;
+      }
     }
   }
 }

@@ -1,9 +1,12 @@
-@forward './main-homeButton';
-@forward './main-homeText';
-@forward './main-destinationDescription';
-@forward './main-destinationPlanet';
-@forward './main-crewAbout';
-@forward './main-crewImage';
+@forward './home/main-homeButton';
+@forward './home/main-homeText';
+@forward './destination/main-destinationDescription';
+@forward './destination/main-destinationPlanet';
+@forward './crew/main-crewAbout';
+@forward './crew/main-crewImage';
+@forward './technology/main-technologyAbout';
+@forward './technology/main-technologyImage';
+
 .main-content--main {
   display: flex;
   justify-content: center;
@@ -43,6 +46,8 @@
     padding: 0;
     .main-container {
       flex-direction: row;
+      width: 100%;
+      justify-content: center;
       gap: 10rem;
     }
   }
@@ -71,6 +76,31 @@
     .main-container {
       flex-direction: row-reverse;
       gap: 15rem;
+    }
+  }
+}
+//technology page
+.main-content--main.technology {
+  padding: 0;
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and(min-width:768px) {
+  .main-content--main.technology {
+    padding-top: 10rem;
+    position: relative;
+  }
+}
+@media screen and(min-width:1440px) {
+  .main-content--main.technology {
+    padding-inline: 5rem;
+    padding-block: 10rem;
+    .main-container {
+      flex-direction: row-reverse;
+      gap: 8rem;
     }
   }
 }

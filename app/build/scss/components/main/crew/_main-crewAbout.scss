@@ -1,4 +1,4 @@
-@use '../variables' as *;
+@use '../../variables' as *;
 
 .main-container--about {
   display: flex;
@@ -73,9 +73,12 @@
 }
 @media screen and(min-width:1440px) {
   .main-container--about {
-    align-items: flex-start;
-    flex-direction: column-reverse;
     margin-top: -5rem;
+    &.crew {
+      align-items: flex-start;
+
+      flex-direction: column-reverse;
+    }
     &-content {
       align-items: flex-start;
 
@@ -92,7 +95,6 @@
       }
     }
     &-btns {
-      margin-top: 10rem;
       &--btn {
         width: 15px;
       }
