@@ -1,4 +1,15 @@
-import * as THREE from 'three';
+import {
+  Scene,
+  PerspectiveCamera,
+  WebGLRenderer,
+  TextureLoader,
+  Mesh,
+  Group,
+  SphereGeometry,
+  ShaderMaterial,
+  AdditiveBlending,
+  BackSide,
+} from 'three';
 import gsap from 'gsap';
 
 import vertexShader from './shaders/vertex.glsl';
@@ -7,55 +18,66 @@ import fragmentShader from './shaders/fragment.glsl';
 import atmosphereVertexShader from './shaders/atmosphereVertex.glsl';
 import atmosphereFragmentShader from './shaders/atmosphereFragment.glsl';
 
+import moonTexture from '../../images/destination/2k_moon.jpg';
+import marsTexture from '../../images/destination/2k_mars.jpg';
+import europaTexture from '../../images/destination/4k_europa.jpg';
+import titanTexture from '../../images/destination/4k_titan.jpg';
+
+const modelContainer = document.querySelector('.main-container--planet-model');
+
 //create canvas and append to container
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(
+const scene = new Scene();
+const camera = new PerspectiveCamera(
   75,
   window.innerWidth / window.innerHeight,
   0.1,
-  1000
+  3000
 );
-const renderer = new THREE.WebGLRenderer({
+const renderer = new WebGLRenderer({
+  alpha: true,
   antialias: true,
 });
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setPixelRatio(window.devicePixelRatio);
-document.body.appendChild(renderer.domElement);
+if (modelContainer != null) {
+  renderer.setPixelRatio(window.devicePixelRatio);
+  modelContainer.appendChild(renderer.domElement);
+  renderer.setSize(modelContainer.clientWidth, modelContainer.clientHeight);
+  camera.aspect = modelContainer.clientWidth / modelContainer.clientHeight;
+  camera.updateProjectionMatrix();
+}
 
 //create a sphere
-const sphere = new THREE.Mesh(
-  new THREE.SphereGeometry(5, 50, 50),
-  new THREE.ShaderMaterial({
+const changeTexture = (txt) => new TextureLoader().load(txt);
+
+const sphere = new Mesh(
+  new SphereGeometry(8, 50, 50),
+  new ShaderMaterial({
     vertexShader,
     fragmentShader,
     uniforms: {
       planetTexture: {
-        value: new THREE.TextureLoader().load(
-          './images/destination/2k_moon.jpg'
-        ),
+        value: changeTexture(moonTexture),
       },
     },
   })
 );
 
 //create "atmosphere" glow
-const atmosphere = new THREE.Mesh(
-  new THREE.SphereGeometry(5, 50, 50),
-  new THREE.ShaderMaterial({
+const atmosphere = new Mesh(
+  new SphereGeometry(8, 50, 50),
+  new ShaderMaterial({
     vertexShader: atmosphereVertexShader,
     fragmentShader: atmosphereFragmentShader,
-    blending: THREE.AdditiveBlending,
-    side: THREE.BackSide,
+    blending: AdditiveBlending,
+    side: BackSide,
   })
 );
 atmosphere.scale.set(1.2, 1.2, 1.2);
 scene.add(atmosphere);
 
-const group = new THREE.Group();
+const group = new Group();
 group.add(sphere);
 scene.add(group);
-
-camera.position.z = 20;
+camera.position.z = 17;
 
 //animate mouse movement
 const mouse = {
@@ -67,8 +89,8 @@ document.addEventListener('mousemove', (event) => {
   mouse.y = -(event.clientY / innerWidth) * 2 + 1;
 });
 
-const createMoon = () => {
-  requestAnimationFrame(createMoon);
+createPlanet = () => {
+  requestAnimationFrame(createPlanet);
   renderer.render(scene, camera);
   sphere.rotation.y += 0.002;
   gsap.to(group.rotation, {
@@ -77,4 +99,20 @@ const createMoon = () => {
     duration: 2,
   });
 };
-export default createMoon;
+
+export const createMoon = () => {
+  sphere.material.uniforms.planetTexture.value = changeTexture(moonTexture);
+  createPlanet();
+};
+export const createMars = () => {
+  sphere.material.uniforms.planetTexture.value = changeTexture(marsTexture);
+  createPlanet();
+};
+export const createEuropa = () => {
+  sphere.material.uniforms.planetTexture.value = changeTexture(europaTexture);
+  createPlanet();
+};
+export const createTitan = () => {
+  sphere.material.uniforms.planetTexture.value = changeTexture(titanTexture);
+  createPlanet();
+};
