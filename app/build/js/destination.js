@@ -1,3 +1,4 @@
+import gsap from 'gsap';
 import data from './data/data.json';
 import {
   createMars,
@@ -11,12 +12,12 @@ const locationBtns = document.querySelectorAll(
 );
 
 const changePlanet = () => {
-  createMoon();
-
   [...locationBtns].map((btn) =>
     btn.addEventListener('click', (e) => {
       toggleActive(e);
       setInfo(e);
+      animatePlanet();
+      animateContent();
     })
   );
 };
@@ -71,4 +72,54 @@ const setInfo = (e) => {
   });
 };
 
+//animate on planet change
+const animatePlanet = () => {
+  const canvas = document.querySelector('canvas');
+  gsap
+    .timeline()
+    .from(canvas, {
+      scale: 0,
+      xPercent: -60,
+      yPercent: 20,
+      duration: 1.2,
+      delay: 0.1,
+    })
+    .to(canvas, { scale: 1, xPercent: 0, yPercent: 0 });
+};
+
+//animate content on change
+const animateContent = () => {
+  gsap
+    .timeline()
+    .from('.main-container--description-text--title', {
+      opacity: 0,
+      yPercent: -80,
+      duration: 0.2,
+      delay: 0.2,
+    })
+    .from('.main-container--description-text--paragraph', {
+      opacity: 0,
+      yPercent: -80,
+      duration: 0.2,
+      delay: 0.3,
+    })
+    .from('.main-container--description-info', {
+      opacity: 0,
+      yPercent: -80,
+      delay: 0.4,
+    })
+
+    .to('.main-container--description-text--title', {
+      opacity: 1,
+      yPercent: 0,
+    })
+    .to('.main-container--description-text--paragraph', {
+      opacity: 1,
+      yPercent: 0,
+    })
+    .to('.main-container--description-info', {
+      opacity: 1,
+      yPercent: 0,
+    });
+};
 export default changePlanet;

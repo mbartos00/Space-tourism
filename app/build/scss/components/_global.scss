@@ -5,6 +5,7 @@
 //typography
 body {
   color: map-get($colors, neutral);
+  background-color: map-get($colors, primary);
 }
 h1 {
   font-size: map-get($font-size, xxl);

@@ -26,6 +26,9 @@
         color: map-get($colors, neutral);
         border-bottom: 3px solid #fff;
       }
+      &.active:hover {
+        border-bottom-color: #fff;
+      }
       &:hover {
         border-bottom-color: rgba(255, 255, 255, 0.4);
       }

@@ -32,13 +32,13 @@
     flex-direction: row;
     gap: 2.3rem;
     &-link {
-      padding-bottom: 1.25rem;
+      padding-bottom: 1.5rem;
       span {
         display: none;
       }
       &.active {
         border-right: none;
-        border-bottom: 3 px solid #fff;
+        border-bottom: 3px solid #fff;
       }
     }
   }

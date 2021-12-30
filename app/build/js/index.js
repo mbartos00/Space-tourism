@@ -1,5 +1,7 @@
 import gsap from 'gsap';
+import changeCrew from './crew';
 import changePlanet from './destination';
+import changeTechnology from './technology';
 
 //nav animation
 let hamburger = document.querySelector('.main-header--burger');
@@ -22,5 +24,17 @@ hamburger.addEventListener('click', () => {
   hamburgerMotion.reversed(!hamburgerMotion.reversed());
 });
 
-//planet model
+//onload animation
+window.onload = () => {
+  gsap
+    .timeline()
+    .from('.main-content', { opacity: 0, ease: 'power4.out', duration: 0.6 })
+    .to('.main-content', { opacity: 1, duration: 1 });
+};
+
+//destination
 changePlanet();
+//crew
+changeCrew();
+//technology
+changeTechnology();

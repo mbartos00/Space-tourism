@@ -89,10 +89,10 @@ document.addEventListener('mousemove', (event) => {
   mouse.y = -(event.clientY / innerWidth) * 2 + 1;
 });
 
-createPlanet = () => {
+const createPlanet = () => {
   requestAnimationFrame(createPlanet);
   renderer.render(scene, camera);
-  sphere.rotation.y += 0.002;
+  sphere.rotation.y += 0.003;
   gsap.to(group.rotation, {
     x: -mouse.y * 0.5,
     y: mouse.x * 0.5,
@@ -100,19 +100,17 @@ createPlanet = () => {
   });
 };
 
+createPlanet();
+
 export const createMoon = () => {
   sphere.material.uniforms.planetTexture.value = changeTexture(moonTexture);
-  createPlanet();
 };
 export const createMars = () => {
   sphere.material.uniforms.planetTexture.value = changeTexture(marsTexture);
-  createPlanet();
 };
 export const createEuropa = () => {
   sphere.material.uniforms.planetTexture.value = changeTexture(europaTexture);
-  createPlanet();
 };
 export const createTitan = () => {
   sphere.material.uniforms.planetTexture.value = changeTexture(titanTexture);
-  createPlanet();
 };
