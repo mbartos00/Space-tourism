@@ -29,7 +29,7 @@
 
 ## Features
 
-#### The challenge was to build an aplication to complete the given challenges.
+#### The challenge was to build an aplication to complete the given stories.
 
 - [x] User should be able to: View the optimal layout for each of the website's pages depending on their device's screen size.
 - [x] User should be able to: See hover states for all interactive elements on the page
