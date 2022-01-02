@@ -36,7 +36,7 @@ const setInfo = (index) => {
 
   const { crew } = data;
 
-  const crewImages = [douglas, mark, anousheh, victor];
+  const crewImages = [douglas, mark, victor, anousheh];
 
   //append data
   crew.map((member) => {

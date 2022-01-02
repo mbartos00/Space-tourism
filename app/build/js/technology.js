@@ -11,13 +11,13 @@ import spaceportPortrait from '../images/technology/spaceport-portrait.jpg';
 
 const portraitImages = [
   launchVehiclePortrait,
-  spaceCapsulePortrait,
   spaceportPortrait,
+  spaceCapsulePortrait,
 ];
 const landscapeImages = [
   launchVehicleLandscape,
-  spaceCapsuleLandscape,
   spaceportLandscape,
+  spaceCapsuleLandscape,
 ];
 
 const technologyBtns = document.querySelectorAll(
