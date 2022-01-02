@@ -18,11 +18,6 @@
 
 ## Overview
 
-![screenshot](https://postimg.cc/xXVY2Rh6)
-![screenshot](https://postimg.cc/7bpr39Hq)
-![screenshot](https://postimg.cc/BtPdnFxk)
-![screenshot](https://postimg.cc/r0BZrhSb)
-
 ### Technologies that i've used
 
 - Html
