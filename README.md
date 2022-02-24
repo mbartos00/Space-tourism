@@ -6,7 +6,7 @@
 
 ## Live site
 
-- [Live](spacetourism-project.netlify.app)
+- [Live](https://spacetourism-project.netlify.app)
 
 ## Table of Contents
 
