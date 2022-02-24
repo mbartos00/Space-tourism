@@ -6,7 +6,7 @@
 
 ## Live site
 
-- [Live](https://61d19c3187cc537d9dec2b03--confident-ritchie-6f430b.netlify.app)
+- [Live](spacetourism-project.netlify.app)
 
 ## Table of Contents
 
